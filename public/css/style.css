@@ -1,0 +1,11 @@
+.jumbotron {
+    background-image: url("../img/univers-1.jpg");
+    background-size: cover;
+    text-shadow: 1px 1px 2px black;
+}
+
+.sun {
+    background-image: url("../img/sun.jpg");
+    background-size: cover;
+    background-position: center;
+}
