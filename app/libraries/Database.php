@@ -1,25 +1,40 @@
 <?php
-class Database{
-   
-    // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "portailactus";
-    private $username = "root";
-    private $password = "";
-    public $conn;
-   
-    // get the database connection
-    public function getConnection(){
-   
-        $this->conn = null;
-   
+
+/*
+ * PDO Database Class
+ * Connect to database
+ * Create prepared statements
+ * Bind values
+ * Return rows and results
+ */
+
+class Database {
+    private $host = DB_HOST;
+    private $user = DB_USER;
+    private $pass = DB_PASS;
+    private $dbname = DB_NAME;
+
+    private $dbh;
+    private $stmt;
+    private $error;
+
+    public function __construct()
+    {
+        // Set DSN
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $options = array(
+            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        );
+
+        // Create PDO instance
         try{
-            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-        }catch(PDOException $exception){
-            echo "Connection error: " . $exception->getMessage();
+
+        } catch(PDOException $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
         }
-   
-        return $this->conn;
     }
 }
+
 ?>
