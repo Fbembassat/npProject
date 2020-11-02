@@ -31,25 +31,30 @@
                             <path d="M21 21l-5.2-5.2" />
                         </svg>
                     </a>
+                    <?php if(isset($_SESSION['user_id'])) : ?>
+
+                        <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
+
+                    <?php else : ?>
                     <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/signup">Sign up</a>
                     <a class="btn btn-sm btn-outline-secondary text-white mr-3" href="<?php echo URLROOT; ?>/users/login">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </header>
 
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="<?php echo URLROOT; ?>">Home</a>
-                <a class="p-2 text-muted" href="#">U.S.</a>
-                <a class="p-2 text-muted" href="#">Technology</a>
-                <a class="p-2 text-muted" href="#">Design</a>
-                <a class="p-2 text-muted" href="#">Culture</a>
-                <a class="p-2 text-muted" href="#">Business</a>
-                <a class="p-2 text-muted" href="#">News</a>
-                <a class="p-2 text-muted" href="#">Opinion</a>
-                <a class="p-2 text-muted" href="#">Science</a>
-                <a class="p-2 text-muted" href="#">Health</a>
-                <a class="p-2 text-muted" href="#">Style</a>
-                <a class="p-2 text-muted" href="#">Travel</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>">Home</a>
+                <a class="p-2 text-white" href="#">About us</a>
+                <a class="p-2 text-white" href="#">Technology</a>
+                <a class="p-2 text-white" href="#">Design</a>
+                <a class="p-2 text-white" href="#">Culture</a>
+                <a class="p-2 text-white" href="#">Business</a>
+                <a class="p-2 text-white" href="#">News</a>
+                <a class="p-2 text-white" href="#">Opinion</a>
+                <a class="p-2 text-white" href="#">Science</a>
+                <a class="p-2 text-white" href="#">Health</a>
+                <a class="p-2 text-white" href="#">Style</a>
             </nav>
         </div>
