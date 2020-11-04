@@ -1,21 +1,23 @@
 <?php
 
-class Users extends Controller {
+class Users extends Controller
+{
     public function __construct()
     {
         $this->userModel = $this->model('User');
     }
 
-    public function signup() {
+    public function signup()
+    {
         // Check for POST
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Process form
 
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             // Init data
-            $data =[
+            $data = [
                 'name' => trim($_POST['name']),
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
@@ -27,59 +29,57 @@ class Users extends Controller {
             ];
 
             // Validate email
-            if(empty($data['email'])){
+            if (empty($data['email'])) {
                 $data['email_err'] = 'Please enter email';
             } else {
                 // Check email
-                if($this->userModel->findUserByEmail($data['email'])){
-                $data['email_err'] = 'Email is already taken';
+                if ($this->userModel->findUserByEmail($data['email'])) {
+                    $data['email_err'] = 'Email is already taken';
                 }
             }
 
             // Validate name
-            if(empty($data['name'])){
+            if (empty($data['name'])) {
                 $data['name_err'] = 'Please enter name';
             }
 
             // Validate password
-            if(empty($data['password'])){
+            if (empty($data['password'])) {
                 $data['password_err'] = 'Please enter password';
-            } elseif(strlen($data['password']) < 6){
+            } elseif (strlen($data['password']) < 6) {
                 $data['password_err'] = 'Password must be at least 6 characters';
             }
 
             // Validate confirm password
-            if(empty($data['confirm_password'])){
+            if (empty($data['confirm_password'])) {
                 $data['confirm_password_err'] = 'Please confirm password';
             } else {
-                if($data['password'] != $data['confirm_password']){
+                if ($data['password'] != $data['confirm_password']) {
                     $data['confirm_password_err'] = 'Password do not match';
                 }
             }
 
             // Make sure errors are empty
-            if(empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+            if (empty($data['email_err']) && empty($data['name_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])) {
                 // Validate
-                
+
                 // Hash password
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                 // Register User
-                if($this->userModel->register($data)){
+                if ($this->userModel->register($data)) {
                     flash('register_success', 'You are registered and can log in');
                     redirect('users/login');
                 } else {
                     die('Something went wrong');
                 }
-
             } else {
                 // Load view with errors
                 $this->view('users/signup', $data);
             }
-
         } else {
             // Init data
-            $data =[
+            $data = [
                 'name' => '',
                 'email' => '',
                 'password' => '',
@@ -95,16 +95,17 @@ class Users extends Controller {
         }
     }
 
-    public function login() {
+    public function login()
+    {
         // Check for POST
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Process form
 
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             // Init data
-            $data =[
+            $data = [
                 'email' => trim($_POST['email']),
                 'password' => trim($_POST['password']),
                 'email_err' => '',
@@ -112,17 +113,17 @@ class Users extends Controller {
             ];
 
             // Validate email
-            if(empty($data['email'])){
+            if (empty($data['email'])) {
                 $data['email_err'] = 'Please enter email';
             }
 
             // Validate password
-            if(empty($data['password'])){
+            if (empty($data['password'])) {
                 $data['password_err'] = 'Please enter password';
             }
 
             // Check for user/email
-            if($this->userModel->findUserByEmail($data['email'])){
+            if ($this->userModel->findUserByEmail($data['email'])) {
                 // User found
             } else {
                 // User not found
@@ -131,28 +132,26 @@ class Users extends Controller {
 
 
             // Make sure errors are empty
-            if(empty($data['email_err']) && empty($data['password_err'])){
+            if (empty($data['email_err']) && empty($data['password_err'])) {
                 // Validate
                 // Check and set logged in user
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
-                if($loggedInUser){
+                if ($loggedInUser) {
                     // Create Session
-                   $this->createUserSession($loggedInUser);
+                    $this->createUserSession($loggedInUser);
                 } else {
                     $data['password_err'] = 'Password incorrect';
 
                     $this->view('users/login', $data);
                 }
-
             } else {
                 // Load view with errors
                 $this->view('users/login', $data);
             }
-
         } else {
             // Init data
-            $data =[ 
+            $data = [
                 'email' => '',
                 'password' => '',
                 'email_err' => '',
@@ -164,14 +163,80 @@ class Users extends Controller {
         }
     }
 
-    public function createUserSession($user){
+    public function newsletter()
+    {
+
+        // check for POST
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // process form
+
+            // Sanitize POST data
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+            // init data
+            $data = [
+
+                'email' => trim($_POST['email']),
+                'email_err' => ''
+            ];
+
+
+            // check if email is empty
+            if (empty($data['email_err'])) {
+                $data['email_err'] = 'Please enter email';
+            } else {
+                //check email
+                if ($this->userModel->findSubByEmail($data['email'])) {
+                    $data['email_err'] = 'Email already in use';
+                }
+            }
+
+            // ensure errors are empty
+            if (empty($data['email_err'])) {
+                // validated
+
+                // register user
+                if ($this->userModel->newsletter($data)) {
+                    // flash('register_success', 'You have been registered');
+                    redirect('users/newsletter');
+                } else {
+                    die('Something went wrong :(');
+                }
+            } else {
+                // load view with errors
+                $this->view('users/newsletter', $data);
+            }
+        } else {
+            // init data
+            // keeps data there if form reset
+            $data = [
+
+                'email' => '',
+                'email_err' => '',
+
+            ];
+
+
+            $this->view('users/newsletter', $data);
+        }
+    }
+
+    public function resetPassword()
+    {
+        $this->view('users/resetPassword');
+    }
+
+    public function createUserSession($user)
+    {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
         redirect('pages/index');
     }
 
-    public function logout(){
+    public function logout()
+    {
         unset($_SESSION['user_id']);
         unset($_SESSION['user_email']);
         unset($_SESSION['user_name']);
@@ -179,8 +244,9 @@ class Users extends Controller {
         redirect('users/login');
     }
 
-    public function isLoggedIn(){
-        if(isset($_SESSION['user_id'])){
+    public function isLoggedIn()
+    {
+        if (isset($_SESSION['user_id'])) {
             return true;
         } else {
             return false;

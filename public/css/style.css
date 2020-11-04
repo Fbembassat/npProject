@@ -11,9 +11,5 @@
 }
 
 body{
-    background-color: black;
-}
-
-#birds {
-    background-position: cover;
+    background-image: url("../img/cosmos.jpg");
 }

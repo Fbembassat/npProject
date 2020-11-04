@@ -1,6 +1,6 @@
 </div>
 
-<footer class="blog-footer text-center p-5 bg-light border-top">
+<footer class="blog-footer text-center p-5 bg-dark border-top">
 
     <p>footer</p>
     <p>

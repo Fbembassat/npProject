@@ -16,7 +16,7 @@
         <header class="blog-header py-3 bg-dark">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1 pl-5">
-                    <a class="text-white" href="#">Subscribe</a>
+                    <a class="text-white" href="<?php echo URLROOT; ?>/users/newsletter">Subscribe</a>
                 </div>
                 <div class="col-4 text-center">
                     <h1 class="blog-header-logo text-white">Univers</h1>
@@ -33,7 +33,8 @@
                     </a>
                     <?php if(isset($_SESSION['user_id'])) : ?>
 
-                        <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
+                        <div class="mr-3 text-white">Hi, <?php echo $_SESSION['user_name'] ?></div>
+                        <a class="btn btn-sm btn-outline-secondary text-white mr-3" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
 
                     <?php else : ?>
                     <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/signup">Sign up</a>
@@ -46,7 +47,7 @@
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>">Home</a>
-                <a class="p-2 text-white" href="#">About us</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/pages/about">About us</a>
                 <a class="p-2 text-white" href="#">Technology</a>
                 <a class="p-2 text-white" href="#">Design</a>
                 <a class="p-2 text-white" href="#">Culture</a>
