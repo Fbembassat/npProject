@@ -42,40 +42,6 @@ class User
         }
     }
 
-    // Newsletter
-    public function newsletter($data)
-    {
-
-        $this->db->query('INSERT INTO newsletter (email) VALUES(:email)');
-        // bind values 
-        $this->db->bind(':email', $data['email']);
-
-        // execute 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // Find user by email for newsletter
-    public function findSubByEmail($email)
-    {
-        $this->db->query('SELECT * FROM newsletter WHERE email = :email');
-
-        // Bind value
-        $this->db->bind(':email', $email);
-
-        $row = $this->db->single();
-
-        // Check row
-        if ($this->db->rowCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     // Find user by email
     public function findUserByEmail($email)
     {

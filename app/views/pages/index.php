@@ -13,7 +13,7 @@
     <div class="col-md-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark">
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">The Sun</strong>
+                <strong class="d-inline-block mb-2 text-warning">The Sun</strong>
                 <h3 class="mb-0 text-white">Featured post</h3>
                 <div class="mb-1 text-white">Nov 12</div>
                 <p class="card-text mb-auto text-white">This is a wider card with supporting text below as a natural

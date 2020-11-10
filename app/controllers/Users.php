@@ -163,65 +163,6 @@ class Users extends Controller
         }
     }
 
-    public function newsletter()
-    {
-
-        // check for POST
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // process form
-
-            // Sanitize POST data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-
-            // init data
-            $data = [
-
-                'email' => trim($_POST['email']),
-                'email_err' => ''
-            ];
-
-
-            // check if email is empty
-            if (empty($data['email_err'])) {
-                $data['email_err'] = 'Please enter email';
-            } else {
-                //check email
-                if ($this->userModel->findSubByEmail($data['email'])) {
-                    $data['email_err'] = 'Email already in use';
-                }
-            }
-
-            // ensure errors are empty
-            if (empty($data['email_err'])) {
-                // validated
-
-                // register user
-                if ($this->userModel->newsletter($data)) {
-                    // flash('register_success', 'You have been registered');
-                    redirect('users/newsletter');
-                } else {
-                    die('Something went wrong :(');
-                }
-            } else {
-                // load view with errors
-                $this->view('users/newsletter', $data);
-            }
-        } else {
-            // init data
-            // keeps data there if form reset
-            $data = [
-
-                'email' => '',
-                'email_err' => '',
-
-            ];
-
-
-            $this->view('users/newsletter', $data);
-        }
-    }
-
     public function resetPassword()
     {
         $this->view('users/resetPassword');
