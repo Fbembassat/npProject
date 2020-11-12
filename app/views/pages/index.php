@@ -29,15 +29,15 @@
     <div class="col-md-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark">
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">The Sun</strong>
+                <strong class="d-inline-block mb-2 text-danger">Mars</strong>
                 <h3 class="mb-0 text-white">Featured post</h3>
                 <div class="mb-1 text-white">Nov 12</div>
                 <p class="card-text mb-auto text-white">This is a wider card with supporting text below as a natural
                     lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="<?php echo URLROOT; ?>/posts/index" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <svg class="sun bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <svg class="mars bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
                 </svg>
             </div>
         </div>
@@ -48,15 +48,15 @@
     <div class="col-md-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark">
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">The Sun</strong>
+                <strong class="d-inline-block mb-2 text-muted">Saturn</strong>
                 <h3 class="mb-0 text-white">Featured post</h3>
                 <div class="mb-1 text-white">Nov 12</div>
                 <p class="card-text mb-auto text-white">This is a wider card with supporting text below as a natural
                     lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="<?php echo URLROOT; ?>/posts/index" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <svg class="sun bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <svg class="saturn bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
                 </svg>
             </div>
         </div>
@@ -64,15 +64,15 @@
     <div class="col-md-6">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark">
             <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">The Sun</strong>
+                <strong class="d-inline-block mb-2 text-info">Mercury</strong>
                 <h3 class="mb-0 text-white">Featured post</h3>
                 <div class="mb-1 text-white">Nov 12</div>
                 <p class="card-text mb-auto text-white">This is a wider card with supporting text below as a natural
                     lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="<?php echo URLROOT; ?>/posts/index" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <svg class="sun bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <svg class="mercury bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
                 </svg>
             </div>
         </div>

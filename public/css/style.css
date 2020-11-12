@@ -12,7 +12,25 @@
     background-position: center;
 }
 
-body{
+.mars {
+    background-image: url("../img/mars.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.saturn {
+    background-image: url("../img/saturn.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.mercury {
+    background-image: url("../img/mercury.png");
+    background-size: cover;
+    background-position: center;
+}
+
+body {
     background-image: url("../img/cosmos.jpg");
     background-attachment: fixed;
     background-size: cover;
@@ -30,6 +48,12 @@ body{
     border-left: 1px solid white;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
+}
+
+/* Footer */
+
+.links li{
+    list-style: none;
 }
 
 /*posts*/

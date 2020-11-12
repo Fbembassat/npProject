@@ -54,7 +54,7 @@
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Earth</a>
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Mars</a>
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Jupiter</a>
-                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Saturne</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Saturn</a>
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Uranus</a>
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Neptune</a>
             </nav>
