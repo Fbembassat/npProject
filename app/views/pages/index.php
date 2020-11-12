@@ -18,7 +18,7 @@
                 <div class="mb-1 text-white">Nov 12</div>
                 <p class="card-text mb-auto text-white">This is a wider card with supporting text below as a natural
                     lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
+                <a href="<?php echo URLROOT; ?>/posts/index" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
                 <svg class="sun bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">

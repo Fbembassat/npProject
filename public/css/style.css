@@ -1,3 +1,5 @@
+/* Index */
+
 .jumbotron {
     background-image: url("../img/univers-1.jpg");
     background-size: cover;
@@ -12,9 +14,34 @@
 
 body{
     background-image: url("../img/cosmos.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+/* Header */
 
 .logo{
     height: 15%;
     width: 15%;
+}
+
+.blog-header{
+    background-color: black;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+/*posts*/
+
+.post{
+    background-color: black;
+    border: 1px solid white;
+}
+
+.system{
+    background-image: url("../img/system.jpg");
+    background-size: cover;
+    text-shadow: 1px 1px 2px black;
+    height: 500px;
 }

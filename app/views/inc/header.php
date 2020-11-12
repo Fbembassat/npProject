@@ -13,10 +13,10 @@
 <body>
 
 <div class="container">
-        <header class="blog-header py-3 bg-dark">
+        <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1 pl-5">
-                    <a class="text-white" href="http://eepurl.com/hij_3P">Subscribe</a>
+                    <a class="text-white" href="http://eepurl.com/hij_3P" target="_blank">Subscribe</a>
                 </div>
                 <div class="col-4 text-center">
                     <h1 class="blog-header-logo text-white font-italic"><img class="logo mr-2" src="<?php echo URLROOT; ?>/img/logo.png" alt ="Logo">SpaceNews</h1>
@@ -48,14 +48,14 @@
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>">Home</a>
                 <a class="p-2 text-white" href="<?php echo URLROOT; ?>/pages/about">About us</a>
-                <a class="p-2 text-white" href="#">Sun</a>
-                <a class="p-2 text-white" href="#">Mercury</a>
-                <a class="p-2 text-white" href="#">Venus</a>
-                <a class="p-2 text-white" href="#">Earth</a>
-                <a class="p-2 text-white" href="#">Mars</a>
-                <a class="p-2 text-white" href="#">Jupiter</a>
-                <a class="p-2 text-white" href="#">Saturne</a>
-                <a class="p-2 text-white" href="#">Uranus</a>
-                <a class="p-2 text-white" href="#">Neptune</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Sun</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Mercury</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Venus</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Earth</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Mars</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Jupiter</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Saturne</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Uranus</a>
+                <a class="p-2 text-white" href="<?php echo URLROOT; ?>/posts/index">Neptune</a>
             </nav>
         </div>
