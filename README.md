@@ -14,4 +14,4 @@
 
 # Objectif
 
-Réaliser un projet sur un thème choisis, j'ai choisis le thème actualités et de le faire en PHP OOP.
+Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" et de le faire en PHP orienté objet.
