@@ -11,3 +11,7 @@
 	- self-hosting
 	- ...
 - Team challenge :  `solo`
+
+# Objectif
+
+Réaliser un projet sur un thème choisis, j'ai choisis le thème actualités et de le faire en PHP OOP.
