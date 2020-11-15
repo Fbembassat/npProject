@@ -18,6 +18,6 @@ Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" 
 
 # Schéma
 
-![screenshoot](C:\wamp64\www\npProject\readme-img\schema)
+![schema](C:\wamp64\www\npProject\readme-img\schema)
 
 
