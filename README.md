@@ -18,6 +18,6 @@ Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" 
 
 # Schéma
 
-![schema](https://raw.githubusercontent.com\C:\wamp64\www\npProject\readme-img\schema.jpg)
+![img](npProject\readme-img\schema.jpg)
 
 
