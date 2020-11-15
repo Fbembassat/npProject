@@ -10,8 +10,6 @@
         <img src="<?php echo $data['url']; ?>" alt="One image from the universe per day">
     </div>
 
-    <p class="text-white text-center mt-5 mb-2"><?php echo $data['explanation']; ?></p>
-
-    <p class="text-white text-center mt-2 mb-5"><?php echo $data['copyright']; ?></p>
+    <p class="text-white text-center mt-5 mb-5"><?php echo $data['explanation']; ?></p>
 
 </div>
