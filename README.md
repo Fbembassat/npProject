@@ -16,8 +16,8 @@
 
 Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" et de le faire en PHP orienté objet.
 
-# Schéma
+# Schema
 
-![img](readme-img/schema.jpg)
+![Schema](readme-img/schema.jpg)
 
 
