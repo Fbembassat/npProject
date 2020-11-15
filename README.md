@@ -18,6 +18,6 @@ Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" 
 
 # Schéma
 
-![img](npProject\readme-img\schema.jpg)
+![img](readme-img/schema.jpg)
 
 
