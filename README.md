@@ -1,5 +1,6 @@
 # npProject
 
+- BeCode
 - Repository: `OOP`
 - Type de challenge:  `Consolidation`
 - Durée: `4 semaines`
@@ -14,10 +15,32 @@
 
 # Objectif
 
-Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" et de le faire en PHP orienté objet.
+Réaliser un projet complet (Front end / Back end) sur un thème imposé, j'ai choisis le thème "actualités" que j'ai orienté sur le sujet de "l'univers" et de le faire en PHP orienté objet.
 
 # Schema
 
-![Schema](readme-img/schema.JPG = 500x500)
+![Schema](readme-img/schema.JPG)
+
+# Languages utilisés
+
+- html
+- css
+- php
+- mysql
+
+# Framework utilisé
+
+- bootstrap 4
+
+# Api
+
+En adéquation avec mon thème j'ai choisis une API de la NASA. Elle consiste à montrer une image de l'univers différentes chaque et d'avoir une courte description de celle-ci.
+
+- Le lien de l'API : https://apod.nasa.gov/apod/astropix.html
+
+
+
+
+
 
 
