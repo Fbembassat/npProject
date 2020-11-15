@@ -39,7 +39,15 @@ En adéquation avec mon thème j'ai choisis une API de la NASA. Elle consiste à
 - Le lien de l'API : https://apod.nasa.gov/apod/astropix.html
 
 
+# Schema de la base de données
 
+- La table pour crée les utilisateurs
+
+![Users](readme-img/users.png)
+
+- la table pour crée des commentaires
+
+![Posts](readme-img/posts.png)
 
 
 
