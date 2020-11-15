@@ -18,6 +18,6 @@ Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" 
 
 # Schema
 
-![Schema](readme-img/schema.JPG)
+![Schema](readme-img/schema.JPG :scale: 50%)
 
 
