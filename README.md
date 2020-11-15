@@ -15,3 +15,9 @@
 # Objectif
 
 Réaliser un projet sur un thème imposé, j'ai choisis le thème "actualités" et de le faire en PHP orienté objet.
+
+# Schéma
+
+![screenshoot](C:\wamp64\www\npProject\readme-img\schema)
+
+
