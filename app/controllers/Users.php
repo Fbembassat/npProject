@@ -4,6 +4,7 @@ class Users extends Controller
 {
     public function __construct()
     {
+        $this->userModel = $this->model('Email');
         $this->userModel = $this->model('User');
     }
 
@@ -184,4 +185,167 @@ class Users extends Controller
         session_destroy();
         redirect('users/login');
     }
+
+
+//request
+
+public function request(){
+ 
+    // Check if POST
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+     // Sanitize POST
+     $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+     
+     $data = [       
+       'email' => trim($_POST['email']),
+       'email_err' => ''
+             
+     ];
+ 
+     // Check for email
+       if(empty($data['email'])){
+         $data['email_err'] = 'Please enter email.';
+       }
+ 
+           // Check for user
+           if($this->userModel->findUserRequest($data['email'])){
+             // User Found
+           } else {
+             // No User
+             $data['email_err'] = 'This email is not registered.';
+             
+           }
+ 
+     // Make sure errors are empty
+     if(empty($data['email_err'])){
+ 
+       // Check and set logged in user
+       
+       if($this->userModel->request($data)){
+        // redirect('users/ressetpass');
+       
+          $send = new Email();
+                 $send->sendMail($data['email']);
+         $this->view('users/login', $data);
+       
+       }
+       else {
+         die('something went wrong');
+       }
+       // $this->userModel->request($data['email']);
+      
+      // $this->view('users/request', $data);
+     } else {
+       // If NOT a POST
+ 
+       $this->view('users/request', $data);
+        }
+       }
+       else {
+         // init data
+         // keeps data there if form reset
+         $data =[
+ 
+             'email' => '',
+ 
+             'email_err' => '',
+ 
+         ];
+ 
+ 
+     $this->view('users/request', $data);
+ }
 }
+
+ public function ressetpass(){
+ 
+    // Check if POST
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+     // Sanitize POST
+     $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+     
+     $data = [       
+          'email' => trim($_POST['email']),
+          'password' => trim($_POST['password']),
+          'confirm_password' => trim($_POST['confirm_password']),
+          
+          'email_err' => '',
+          'password_err' => '',
+          'confirm_password_err' => ''   
+    ];
+ 
+     // Check for email
+       if(empty($data['email'])){
+         $data['email_err'] = 'Please enter email.';
+       }
+ 
+           // Check for user
+           if($this->userModel->findUserResset($data['email'])){
+             // User Found
+           } else {
+             // No User
+             $data['email_err'] = 'This email is not registered.';
+             
+           }
+      
+           // Validate password
+        if(empty($data['password'])){
+          $password_err = 'Please enter a password.';     
+        } elseif(strlen($data['password']) < 6){
+          $data['password_err'] = 'Password must have atleast 6 characters.';
+        }
+
+        // Validate confirm password
+        if(empty($data['confirm_password'])){
+          $data['confirm_password_err'] = 'Please confirm password.';     
+        } else{
+            if($data['password'] != $data['confirm_password']){
+                $data['confirm_password_err'] = 'Password do not match.';
+            }
+        }
+
+
+
+
+      // Make sure errors are empty
+      if(empty($data['name_err']) && empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
+        // SUCCESS - Proceed to insert
+
+        // Hash Password
+        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        //Execute
+        if($this->userModel->ressetpass($data)){
+          redirect('users/login');
+        }
+        else {
+          die('something went wrong');
+        }
+        // $this->userModel->request($data['email']);
+        
+        // $this->view('users/request', $data);
+      } else {
+        // If NOT a POST
+  
+        $this->view('users/ressetpass', $data);
+          }
+        }
+        else {
+          // init data
+          // keeps data there if form reset
+          $data =[
+  
+              'email' => '',
+  
+              'email_err' => '',
+              'password' => '',
+
+              'confirm_password' => '',
+  
+          ];
+  
+  
+      $this->view('users/ressetpass', $data);
+  }
+ }
+}
+  

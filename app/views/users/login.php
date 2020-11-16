@@ -24,13 +24,13 @@
                         <input type="submit" value="Login" class="btn btn-dark btn-block">
                     </div>
                     <div class="col">
-                        <a href="<?php echo URLROOT; ?>/users/signup<?php echo URLROOT; ?>/users/signup" class="btn btn-light btn-block">No account ? Signup</a>
+                        <a href="<?php echo URLROOT; ?>/users/signup" class="btn btn-light btn-block">No account ? Signup</a>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col">
-                        <a href="<?php echo URLROOT; ?>/users/resetPassword" class="btn btn-light btn-block">Password forgot ?</a>
+                        <a href="<?php echo URLROOT; ?>/users/request" class="btn btn-light btn-block">Password forgot ?</a>
                     </div>
                 </div>
 
