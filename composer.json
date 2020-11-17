@@ -1,0 +1,10 @@
+{
+    "name": "fbemb/np-project",
+    "authors": [
+        {
+            "name": "fbemb",
+            "email": "f.bembassat@gmail.com"
+        }
+    ],
+    "require": {}
+}
