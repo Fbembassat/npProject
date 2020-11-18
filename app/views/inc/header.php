@@ -16,7 +16,8 @@
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1 pl-5">
-                    <a class="text-white" href="http://eepurl.com/hij_3P" target="_blank">Subscribe</a>
+                    <a class="text-white envelope" href="http://eepurl.com/hij_3P" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+Subscribe</a>
                 </div>
                 <div class="col-4 text-center">
                     <h1 class="blog-header-logo text-white font-italic"><img class="logo mr-2" src="<?php echo URLROOT; ?>/img/logo.png" alt ="Logo">SpaceNews</h1>
