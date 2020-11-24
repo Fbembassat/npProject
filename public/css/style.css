@@ -50,6 +50,21 @@ body {
     border-bottom: 1px solid white;
 }
 
+.search{
+    background-color: black;
+    width: 95%;
+    margin-right: 10%;
+    border-top: black;
+    border-right: black;
+    border-left: black;
+    border-bottom: 1px solid white;
+    display: none;
+}
+
+.formsearch{
+    width: 40%;
+}
+
 /* Footer */
 
 .links li{

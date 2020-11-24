@@ -12,34 +12,38 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
         <header class="blog-header py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1 pl-5">
                     <a class="text-white envelope" href="http://eepurl.com/hij_3P" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-Subscribe</a>
+                        Subscribe</a>
                 </div>
                 <div class="col-4 text-center">
-                    <h1 class="blog-header-logo text-white font-italic"><img class="logo mr-2" src="<?php echo URLROOT; ?>/img/logo.png" alt ="Logo">SpaceNews</h1>
+                    <h1 class="blog-header-logo text-white font-italic"><img class="logo mr-2" src="<?php echo URLROOT; ?>/img/logo.png" alt="Logo">SpaceNews</h1>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
-                    <a class="text-white" href="#" aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
-                            viewBox="0 0 24 24" focusable="false">
+
+                    <form class="formsearch" action="search.php" method="POST">
+                        <input class="search text-white" type="text" name="search" placeholder="Search">
+                    </form>
+
+                    <a class="text-white" href="#" aria-label="Search" onclick="activeSearch()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false">
                             <title>Search</title>
                             <circle cx="10.5" cy="10.5" r="7.5" />
                             <path d="M21 21l-5.2-5.2" />
                         </svg>
                     </a>
-                    <?php if(isset($_SESSION['user_id'])) : ?>
+
+                    <?php if (isset($_SESSION['user_id'])) : ?>
 
                         <div class="mr-3 text-white">Hi, <?php echo $_SESSION['user_name'] ?></div>
                         <a class="btn btn-sm btn-outline-secondary text-white mr-3" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
 
                     <?php else : ?>
-                    <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/signup">Sign up</a>
-                    <a class="btn btn-sm btn-outline-secondary text-white mr-3" href="<?php echo URLROOT; ?>/users/login">Login</a>
+                        <a class="btn btn-sm btn-outline-secondary text-white mr-1" href="<?php echo URLROOT; ?>/users/signup">Sign up</a>
+                        <a class="btn btn-sm btn-outline-secondary text-white mr-3" href="<?php echo URLROOT; ?>/users/login">Login</a>
                     <?php endif; ?>
                 </div>
             </div>
