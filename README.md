@@ -50,5 +50,16 @@ En adéquation avec mon thème j'ai choisis une API de la NASA. Elle consiste à
 ![Posts](readme-img/posts.png)
 
 
+# Screenshot du site
+
+- Header du site
+
+![Header](readme-img/screen1.png)
+
+- Partie Posts et footer
+
+![Footer](readme-img/screen2.png)
+
+
 
 
