@@ -58,7 +58,7 @@ En adéquation avec mon thème j'ai choisis une API de la NASA. Elle consiste à
 
 - Partie Posts et footer
 
-![Footer](readme-img/screen2.png)
+![Footer](readme-img/screenfoot.png)
 
 
 
